@@ -41,6 +41,7 @@ namespace PresentacionGUI
             this.TxtPulsacion = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnCalcular = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,13 +123,16 @@ namespace PresentacionGUI
             // 
             // TxtPulsacion
             // 
+            this.TxtPulsacion.Enabled = false;
             this.TxtPulsacion.Location = new System.Drawing.Point(146, 214);
             this.TxtPulsacion.Name = "TxtPulsacion";
             this.TxtPulsacion.Size = new System.Drawing.Size(125, 27);
             this.TxtPulsacion.TabIndex = 9;
+            this.TxtPulsacion.TextChanged += new System.EventHandler(this.TxtPulsacion_TextChanged);
             // 
             // BtnGuardar
             // 
+            this.BtnGuardar.Enabled = false;
             this.BtnGuardar.Location = new System.Drawing.Point(99, 287);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(94, 29);
@@ -145,12 +149,24 @@ namespace PresentacionGUI
             this.BtnCancelar.TabIndex = 11;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnCalcular
+            // 
+            this.BtnCalcular.Location = new System.Drawing.Point(289, 213);
+            this.BtnCalcular.Name = "BtnCalcular";
+            this.BtnCalcular.Size = new System.Drawing.Size(94, 29);
+            this.BtnCalcular.TabIndex = 12;
+            this.BtnCalcular.Text = "Calcular";
+            this.BtnCalcular.UseVisualStyleBackColor = true;
+            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // FrmGestionPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 341);
+            this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtPulsacion);
@@ -184,5 +200,6 @@ namespace PresentacionGUI
         private System.Windows.Forms.TextBox TxtPulsacion;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnCalcular;
     }
 }

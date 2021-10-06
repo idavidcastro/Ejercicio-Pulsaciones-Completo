@@ -16,7 +16,8 @@ namespace Datos
         public List<Persona> Consultar()
         {
             List<Persona> personas = new();
-            StreamReader lector = new(ruta);
+            FileStream file = new FileStream(ruta, FileMode.OpenOrCreate);
+            StreamReader lector = new(file);
             string linea;
             while ((linea = lector.ReadLine()) != null)
             {
@@ -34,6 +35,7 @@ namespace Datos
             }
 
             lector.Close();
+            file.Close();
             return personas;
         }
 
